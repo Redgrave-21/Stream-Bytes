@@ -7,27 +7,34 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { ProdutDetailsComponent } from './produt-details/produt-details.component';
+import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-    ])
+      { path: 'products/:productId', component: ProdutDetailsComponent },
+      { path: 'cart', component: CartComponent },
+    ]),
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductAlertsComponent
+    ProductAlertsComponent,
+    ProdutDetailsComponent,
+    CartComponent,
+    ShippingComponent,
   ],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}
 
 /*
 Copyright Google LLC. All Rights Reserved.
