@@ -1,0 +1,33 @@
+#search-component{
+    display:flex;
+    font-size: 1.5em;    
+}
+
+.fa.fa-search{
+    align-content: center;
+    font-size: 1.3em;
+}
+
+.search-result{
+    position: fixed;
+    z-index: 99;
+    align-items: center;
+    overflow-y: scroll;
+    background-color: #000000;
+    list-style: none;
+    border: #fbca27;
+}
+
+li{ 
+    background-color: #000000;
+    color:#000000
+}
+a{
+    background-color: #000000;
+    color: #fbca27;
+}
+
+.card.card-body{
+    background-color: #000000;
+    border: #fbca27;
+}

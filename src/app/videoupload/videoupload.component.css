@@ -1,0 +1,47 @@
+body {
+    background-color: #000000;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fbca27
+}
+
+
+
+.card.card-body {
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-color: #000000;
+    color: white
+}
+
+#video-title {
+    font-size: 1.3em;
+    color: #fbca27;
+}
+
+#video-description {
+    font-size: 2em;
+    color: #fbca27
+}
+
+.btn.btn-primary {
+    font-size: 1.2em;
+    background-color: #fbca27;
+}
+
+
+.progress {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.progress-bar {
+    background-color: #fbca27;
+    color: #000000;
+    height: 100%;
+    width: 100%;
+}

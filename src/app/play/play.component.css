@@ -1,0 +1,79 @@
+body {
+    background-color: #000000;
+    color: white
+}
+
+#button-like {
+    border: none;
+    font-size: 2em;
+    background-color: #000000;
+    color: #fbca27;
+}
+
+#button-dislike {
+    border: none;
+    font-size: 2em;
+    background-color: #000000;
+    color: #fbca27;
+}
+
+
+#video-title {
+    font-size: 2em;
+    color: #fbca27
+}
+
+#description-div{
+    background-color: #000000;
+}
+
+#author {
+    font-size: 2em;
+    color: #fbca27
+}
+
+#description {
+    font-size: 2em;
+    color: #fbca27;
+}
+
+#comment-div{
+    background-color: #000000;
+}
+
+#comments {
+    font-size: 2em;
+    color: #fbca27
+}
+
+p {
+    font-size: 1.5em;
+}
+
+#add-to-playlist {
+    background-color: #fbca27;
+    font-size: 1.2em;
+}
+
+#add-button {
+    background-color: #fbca27;
+    font-size: 1.2em;
+}
+
+#comment-label {
+    font-size: 1.5em;
+    color: #fbca27
+}
+
+#add-comment-form {
+    background-color: #fbca27;
+}
+
+#comment-author {
+    font-size: 1.3em;
+    color:#fbca27
+}
+
+#comment-text {
+    font-size: 1.2em;
+}

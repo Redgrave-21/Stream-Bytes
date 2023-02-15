@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Welcome !<em>&nbsp;&nbsp;{{User.body.userName}}</em></h1>
+        <button class="btn btn-danger" (click)="logout()">Log out</button>
+    <div class="row">
+        <div class="col-md-auto">
+            <h2 class="mt-5">Your Playlist</h2>
+            <div *ngFor="let video of User.body.playlist">
+                <div>
+                    <ul class="list-group">
+                        <li>
+                            <div id="cards" class="card card-body">
+                                <h4>{{video.title}}</h4>
+                                <a routerLink="/play/{{video._id}}"><img class="img-fluid" height="200" width="300"
+                                        src="http://localhost:3000/sendimage/{{video.thumbLocation}}"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-auto" id="uploaded">
+            <div class="container">
+                <h2 class="mt-5">Your Uploded Videos</h2>
+                <div class="row">
+                    <div class="col-4" *ngFor="let video of User.body.videos">
+                        <div id="cards" class="card card-body">
+                            <h4>{{video.title}}</h4>
+                            <img class="img-fluid" height="500" width="600"
+                                src="http://localhost:3000/sendimage/{{video.thumbLocation}}">
+                            <form action="http://localhost:3000/video/delete/{{video._id}}?_method=DELETE"
+                                method="POST">
+                                <button type="submit" class="btn btn-danger mt-5" id="delete">Delete</button>
+                            </form> <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+body{
+    background-color: #000000;
+    /* overflow:hidden; */
+    font-size:1.2em
+}
+
+h2{
+    color:#fbca27;
+    font-size:1.5em
+}
+
+#button-login{
+    background-color:#fbca27;
+    width:auto
+}
+
+.card.card-body{
+    background-color: #000000;
+    color:white
+}
+
+#signup-form{
+    background-color: #fbca27;
+}
+
+p{
+    font: size 1.2em;
+    color:white
+}
+
+#message{
+    color:#fbca27
+}
