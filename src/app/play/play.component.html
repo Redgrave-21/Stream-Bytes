@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StreamBytes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="margin-left:100px; margin-right: 100px;">
+    <div class="p-3 mb-0">
+
+        <div *ngIf="id" class="card-img-top mb-3" style="text-align:center">
+            <video width="60%" height="400" source src="http://localhost:3000/play/{{id}}" controls>
+                there is no video to play
+            </video><br>
+            <div class="row mx-auto">
+                <div class="col">
+                    <button type="button" id="button-like" class="fa-regular fa-thumbs-up"
+                        (click)="addLike()"></button> {{video.likes.length}}
+                </div>
+                <div class="col ps-5 pe-5">
+                    <button type="button" id="button-dislike" class="fa-regular fa-thumbs-down"
+                        (click)="addDislike()"></button> {{video.dislikes.length}}&nbsp;
+                </div>
+            </div>
+            <h2 id="video-title">{{video.title}}</h2>
+        </div>
+        <button type="button" class="btn btn-warning" id="add-to-playlist" (click)="addToPlaylist()">Add to
+            playlist</button>
+        <br><br>
+        <div id="description-div" class=" card card-body mx-auto ps-1 p-3 mb-0 text-white" style="width: float;">
+            <div class="row">
+                <!-- <p><b>Uploaded By &nbsp;</b>{{video.author}}</p> -->
+                <h2 id="author">Uploaded by </h2>
+                <p>{{video.author}}</p>
+            </div>
+            <hr>
+            <div class="row">
+                <h2 id="description">Description</h2>
+                <p>&nbsp;{{video.description}}</p>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div>
+            <button type="button" id="add-button" class="btn btn-warning" (click)="checkloggedin()">Add Comment</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <div *ngIf="addCommentDiv" class="mx-auto" style="width:500px">
+            <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+                <div class="mb-3">
+                    <label for="text" id="comment-label">new Comment</label>
+                    <textarea id="text" class="form-control" row="5" col="50" formControlName="text"></textarea>
+                </div>
+                <button type="submit" class="btn btn-warning" id="add-comment-form"> add comment</button>
+            </form>
+        </div>
+        <h2 class="mt-5" id="comments"><i class="fa-solid fa-comments"></i> Comments</h2>
+        <div *ngIf="video.comments">
+            <div id="comment-div" class="row card card-body p-3 mb-0 text-white" *ngFor="let comment of video.comments">
+                <blockquote class="blockquote" id="comment-author">&nbsp; &nbsp;{{comment.author}}&nbsp;&nbsp;
+                </blockquote><br>
+                &nbsp; &nbsp; &nbsp; &nbsp;<p id="comment-text">{{comment.text}}</p><br>
+                &nbsp; &nbsp; &nbsp; &nbsp;<p id="comment-date">{{comment.date}}</p>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>

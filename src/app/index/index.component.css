@@ -1,0 +1,36 @@
+a-hover {
+    background-color: #555;
+}
+
+body {
+    background-color: #000000;
+    overflow: hidden;
+    color:white
+}
+
+.card.card-body {
+    background-color: #000000;
+}
+
+.card.card-body:hover {
+    background-color: #333;
+}
+
+.row {
+    background-color: #000000;
+}
+
+#video-title {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+#video-list {
+    overflow: hidden
+}
+
+#video-author {
+    color: #fbca27;
+    font-size: 1.2em;
+}

@@ -1,0 +1,35 @@
+body{
+    background-color: #000000;
+    color:white;
+    overflow: hidden;
+}
+
+a-hover {
+    background-color: #555;
+}
+img-hover{
+    background-color: #555;
+}
+
+#button-delete{
+    background-color:#fbca27
+}
+
+.row{
+    background-color: #000000;
+}
+
+#cards{
+    background-color:#000000;
+    color:white
+}
+
+h2{
+    font-size: 2em;
+    color:#fbca27;
+}
+
+#uploaded{
+    margin-left: 2px;
+    color:#fbca27
+}
