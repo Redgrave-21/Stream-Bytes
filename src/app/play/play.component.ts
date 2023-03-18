@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Video } from '../interfaces';
 import { FormBuilder } from '@angular/forms';
 import { AuthServiceService } from '../auth-service.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-play',
@@ -14,7 +15,7 @@ import { AuthServiceService } from '../auth-service.service';
   styleUrls: ['./play.component.css']
 })
 export class PlayComponent {
-
+  apiUrl=environment.apiUrl;
 
   //id: string| null = '0';
   video: any
@@ -104,7 +105,6 @@ export class PlayComponent {
 
     }
     else if (this.authService.isLoggedOut() == false && this.authService.isLoggedIn()) {
-      // this.playService.addDislike(this.id).subscribe();
       console.log(this.id)
       this.playService.addToPlaylist(this.id).subscribe();
     }

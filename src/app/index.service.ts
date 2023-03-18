@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, of, tap } from 'rxjs';
 
-import { Videos } from './interfaces';
+import { Video } from './interfaces';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,14 @@ export class IndexService {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
 
 
-    this.getImage('http://localhost:3000/indeximages').subscribe(x => this.url = x)
+    // this.getImage('http://localhost:3000/indeximages').subscribe(x => this.url = x)
+    this.getImage(`${environment.apiUrl}/indeximages`).subscribe(x => this.url = x)
   }
 
   //************************** */
-  getVideos(): Observable<Videos[]> {
-    return this.http.get<Videos[]>("http://localhost:3000/")
+  getVideos(): Observable<Video[]> {
+    // return this.http.get<Videos[]>("http://localhost:3000/")
+    return this.http.get<Video[]>(`${environment.apiUrl}/`)
   }
   //******************************** */
 
@@ -34,9 +37,10 @@ export class IndexService {
       );
   }
 
- searchVideos(form:FormData):Observable<Videos[]>{
+ searchVideos(form:FormData):Observable<Video[]>{
     console.log('output from search services',form)
-    return this.http.post<Videos[]>(`http://localhost:3000/searchvideos/form`,form).pipe(
+    // return this.http.post<Videos[]>(`http://localhost:3000/searchvideos/form`,form).pipe(
+      return this.http.post<Video[]>(`${environment.apiUrl}/searchvideos/form`,form).pipe(
     )
  }
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { debounceTime, distinctUntilChanged, Observable, of, Subject, switchMap } from 'rxjs';
 import { IndexService } from '../index.service';
-import { Video, Videos } from '../interfaces';
+import { Video,} from '../interfaces';
 import { FormControl, FormGroup } from '@angular/forms';
 
 
@@ -12,7 +12,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class VideoSearchComponent {
   // videos !: Observable<Video[]>
-  videos: Videos[] = [];
+  videos: Video[] = [];
   searchForm={term:''}
   searchResult:boolean=false
 

@@ -73,6 +73,10 @@ export class VideouploadComponent {
   onFileSelected(event: any) {
     this.fileToUpload = event.target.files[0]
     console.log(event.target.files[0])
+    let fileName = event.target.files[0].type;
+    if(fileName !== "video/mp4"){
+      alert("Only video file type with .mp4 extensions are allowed");
+    }
   }
 
   onSubmit(): void {

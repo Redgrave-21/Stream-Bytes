@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthServiceService } from '../auth-service.service';
 import { UserService } from '../user.service';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-userpage',
@@ -11,6 +13,9 @@ import { UserService } from '../user.service';
 export class UserpageComponent {
   constructor(private userService:UserService, private authService: AuthServiceService, private router:Router,
     private route:ActivatedRoute){}
+
+    apiUrl = environment.apiUrl;
+
   ngOnInit(){
     if(this.authService.isLoggedIn()==true){
       // this.userService.getUser().subscribe(user=>this.User=user)

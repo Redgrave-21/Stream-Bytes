@@ -11,12 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
@@ -26,17 +26,20 @@
             <div class="col">
                 <app-video-search></app-video-search>
             </div>
-        <ul>
-            <li><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
-            <li><a routerLink="/upload" routerLinkActive="active" ariaCurrentWhenActive="page">Upload video</a></li>
-            <li><a routerLink="/user/signup" routerLinkActive="active" ariaCurrentWhenActive="page">Sign up</a></li>
-            <li><a routerLink="/user/home" routerLinkActive="active" ariaCurrentWhenActive="page">Your Page</a></li>
-        </ul>
-        <hr>
+            <ul>
+                <li><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
+                <li><a routerLink="/upload" routerLinkActive="active" ariaCurrentWhenActive="page">Upload video</a></li>
+                <li><a routerLink="/user/signup" routerLinkActive="active" ariaCurrentWhenActive="page">Sign up</a></li>
+                <li><a routerLink="/user/home" routerLinkActive="active" ariaCurrentWhenActive="page">Your Page</a></li>
+            </ul>
+            <hr>
         </div>
         <div id="outlet">
-            <router-outlet></router-outlet>
+            <router-outlet>
+
+            </router-outlet>
         </div>
     </div>
 </body>
+
 </html>

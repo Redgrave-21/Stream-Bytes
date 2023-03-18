@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { isFormRecord } from '@angular/forms';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Videos } from '../interfaces';
+import { Video } from '../interfaces';
 import { IndexService } from '../index.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, switchAll } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-index',
@@ -14,15 +15,18 @@ import { switchMap } from 'rxjs';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit{
-  
+  apiUrl=environment.apiUrl;
   public url: SafeResourceUrl | undefined
-  constructor(private http:HttpClient, private indexService:IndexService, private sanitizer: DomSanitizer, private route: ActivatedRoute){}
+  constructor(private http:HttpClient, private indexService:IndexService, private sanitizer: DomSanitizer, private route: ActivatedRoute){
+    console.log(environment.apiUrl)
+  }
 
-  videos: Videos[] = [];
+  videos: Video[] = [];
   selectedId : string;
   ngOnInit():void{
       this.showVideos()
-      this.getImage("http://localhost:3000/indeximages")
+      // this.getImage("http://localhost:3000/indeximages")
+      this.getImage(`${environment.apiUrl}/indeximages`)
       
   }
 

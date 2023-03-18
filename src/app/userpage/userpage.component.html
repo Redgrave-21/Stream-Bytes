@@ -16,9 +16,9 @@
                     <ul class="list-group">
                         <li>
                             <div id="cards" class="card card-body">
-                                <h4>{{video.title}}</h4>
-                                <a routerLink="/play/{{video._id}}"><img class="img-fluid" height="200" width="300"
-                                        src="http://localhost:3000/sendimage/{{video.thumbLocation}}"></a>
+                                <h4 class="text-truncate">{{video.title}}</h4>
+                                <a routerLink="/play/{{video._id}}"><img class="img-fluid" height="200" width="300" 
+                                        src="{{apiUrl}}/sendimage/{{video.thumbLocation}}"></a>
                             </div>
                         </li>
                     </ul>
@@ -33,8 +33,8 @@
                         <div id="cards" class="card card-body">
                             <h4>{{video.title}}</h4>
                             <img class="img-fluid" height="500" width="600"
-                                src="http://localhost:3000/sendimage/{{video.thumbLocation}}">
-                            <form action="http://localhost:3000/video/delete/{{video._id}}?_method=DELETE"
+                                src="{{apiUrl}}/sendimage/{{video.thumbLocation}}">
+                            <form action="{{apiUrl}}/video/delete/{{video._id}}?_method=DELETE"
                                 method="POST">
                                 <button type="submit" class="btn btn-danger mt-5" id="delete">Delete</button>
                             </form> <br>

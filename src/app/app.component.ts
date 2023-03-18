@@ -2,6 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthServiceService } from './auth-service.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -11,7 +12,9 @@ import { AuthServiceService } from './auth-service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private authService: AuthServiceService,){}
+  constructor(private authService: AuthServiceService,){
+    console.log(environment.apiUrl)
+  }
   title = 'stream-bytes';
 
   isLoggedIn:boolean=false;
@@ -35,8 +38,7 @@ export class AppComponent {
 @Injectable()
 export class APIInterceptor implements HttpInterceptor{
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-      
-    const apiReq = req.clone({ url: `http://localhost:3000/${req}` });
+    const apiReq = req.clone({ url: `${environment.apiUrl}/${req}` });
     return next.handle(apiReq);
   }
   

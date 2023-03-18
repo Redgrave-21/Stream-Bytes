@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="file-upload mb-3">
-                    <input type="file" name="file" color="primary" (change)="onFileSelected($event)">
+                    <input type="file" name="file" accept="video/mp4,WebM" color="primary" (change)="onFileSelected($event)">
                     <button class="cancel-upload" (click)="cancelUpload()" *ngIf="uploadProgress">
                         delete</button>
                 </div>
@@ -57,9 +57,6 @@
                     <div class="progress-bar progress-bar-stripped progress-bar-animated" role="progressbar" attr.aria-valuenow="{{uploadProgress}}"
                         aria-valuemin="0" aria-valuemax="100">{{uploadProgress}}</div>
                 </div>
-
-
-
 
                 <button class="btn btn-primary" type="submit" [disabled]="videoUploadForm.invalid">
                     <i class="fa-solid fa-upload"></i> Upload</button>

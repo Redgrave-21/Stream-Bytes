@@ -1,7 +1,11 @@
 body {
     background-color: #000000;
-    color: white
+    /* min-height:100vh;
+    max-height: 100vh; */
+    margin:0%;
+    padding:0%;
 }
+
 
 #button-like {
     border: none;
@@ -19,16 +23,26 @@ body {
 
 
 #video-title {
-    font-size: 2em;
-    color: #fbca27
+    font-size: 2.5em;
+    color: #fbca27;
+}
+
+#title-div{
+    text-align: left;
 }
 
 #description-div{
-    background-color: #000000;
+    background-color: pink;
+    margin-bottom: 0;
+    color:white;
+}
+
+#author-div{
+    text-align: left;
 }
 
 #author {
-    font-size: 2em;
+    font-size: 1.3em;
     color: #fbca27
 }
 
@@ -37,13 +51,20 @@ body {
     color: #fbca27;
 }
 
+#description-div{
+    background-color: #000000;
+    width: 100%;
+}
+
 #comment-div{
+    width: 100%;
     background-color: #000000;
 }
 
 #comments {
     font-size: 2em;
-    color: #fbca27
+    color: #fbca27;
+    background-color:#000000
 }
 
 p {
@@ -76,4 +97,11 @@ p {
 
 #comment-text {
     font-size: 1.2em;
+}
+
+.fa.fa-eye{
+    color:#fbca27
+}
+h6,p{
+    color:white
 }

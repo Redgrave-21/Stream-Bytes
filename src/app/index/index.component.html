@@ -8,14 +8,15 @@
 </head>
 <body>
         <div class="row">
-                <div id="video-list" class="col-3 rounded" *ngFor="let video of videos">
-                        <div class="card card-body">
-                                                <a routerLink="/play/{{video._id}}"><img class="img-fluid" height="500"
-                                                                width="600"
-                                                                src="http://localhost:3000/sendimage/{{video.thumbLocation}}"></a>
-                                                <h3 id="video-title" class="text-truncate">{{video.title}}</h3>
-                                                <h3 id="video-author" class="text-truncate">{{video.author}}</h3>
-                                        </div>
+                <div id="video-list" class="col-3" *ngFor="let video of videos">
+                        <div class="card">
+                                <div class="card card-body">
+                                        <a routerLink="/play/{{video._id}}"><img class="card-img-top"
+                                                        src="{{apiUrl}}/sendimage/{{video.thumbLocation}}"></a>
+                                        <h4 id="video-title" class="card-title text-truncate">{{video.title}}</h4>
+                                        <h5 id="video-author" class="card-text">{{video.author}}</h5>
+                                </div>
+                        </div>
                 </div>
         </div>
 </body>
